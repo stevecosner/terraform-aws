@@ -6,7 +6,7 @@ provider "aws" {
   region     = "us-east-2"
 }
 
-resource "aws_instance" "aws-2-1" {
+resource "aws_instance" "aws-1" {
   ami           = "ami-07c8bc5c1ce9598c3"
   instance_type = "t2.micro"
   key_name = "id_rsa_msa"
@@ -33,6 +33,6 @@ connection {
 }
 
 output "public_instance_ip" {
-  value = ["${aws_instance.aws-l-1.public_ip}"]
+  value = ["${aws_instance.aws-l.public_ip}"]
 
 }
