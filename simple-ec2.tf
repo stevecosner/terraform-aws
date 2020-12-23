@@ -2,8 +2,8 @@
 # centos7 ami-01e36b7901e884a10
 
 provider "aws" {
-  access_key = "AKIATDZ2LY2STHENRRWK"
-  secret_key = "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"
+  access_key = ""
+  secret_key = ""
   region     = "us-east-2"
 }
 
