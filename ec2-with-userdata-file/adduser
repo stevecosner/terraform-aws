@@ -1,0 +1,16 @@
+#!/bin/bash
+
+useradd -p $(openssl passwd -1 TheBigNest123) steve
+mkdir /home/steve
+chmod 700 /home/steve
+chown steve:steve /home/steve
+usermod -s /bin/bash steve
+cp /home/ubuntu/.profile /home/steve
+cp /etc/skel/.bashrc /home/steve
+chown steve:steve /home/steve/.profile
+chown steve:steve /home/steve/.bashrc
+mkdir /home/steve/.ssh
+chown steve:steve /home/steve/.ssh
+cp /home/ubuntu/.ssh/authorized_keys /home/steve/.ssh/
+chown steve:steve /home/steve/.ssh/authorized_keys
+echo 'steve ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
