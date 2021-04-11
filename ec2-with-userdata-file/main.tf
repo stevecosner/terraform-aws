@@ -8,6 +8,7 @@ provider "aws" {
 
 resource "aws_instance" "webt1" {
   ami           = "ami-021b7b04f1ac696c2"
+  user_data          = "${file("web.conf")}"
   instance_type = "t2.micro"
   key_name = "id_rsa_msa"
 }
